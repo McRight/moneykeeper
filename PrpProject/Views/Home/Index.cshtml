@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAuthorised.cshtml";
+}
+<div class="budget">
+    Состояние счёта: @ViewBag.User.Money
+</div>
+
+<div class="ManagerItemHeader">
+    Доходы
+</div>
+
+<hr />
+<div class="Incomes">
+    @foreach (var item in ViewBag.Items)
+    {
+        if (item.State == true)
+        {
+            <a href="/Home/Operation/@item.Id"><div>@item.Name<div class="ManagerItemsPossitive"></div></div></a>
+        }
+    }
+
+        <a href="/Home/AddIncome"><div class="ManagerItemsPossitive">Добавить категорию доходов"</div></a>
+</div>
+
+<div class="ManagerItemHeader">
+    Расходы
+</div>
+
+<hr />
+<div class="Rashody">
+    @foreach (var item in ViewBag.Items)
+    {
+        if (item.State != true)
+        {
+            <a href="/Home/Operation/@item.Id"><div>@item.Name<div class="ManagerItemsNeggative"></div></div></a>
+        }
+    }
+    <a href="/Home/AddRashod"><div class="ManagerItemsNeggative">Добавить категорию расходов"</div></a>
+</div>    
+
+

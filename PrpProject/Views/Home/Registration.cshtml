@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.RegistrationMessage != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.RegistrationMessage");
+            }
+    </script>
+}
+    <div>
+        <h3>Форма регистрации</h3>
+        <form method="post" action="">
+            <table>
+                <tr>
+                    <td><p>Введите своё имя </p></td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите свою фамилию </p></td>
+                    <td><input type="text" name="Surname" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите свой логин </p></td>
+                    <td><input type="text" name="Login" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите пароль</p></td>
+                    <td>
+                        <input type="text" name="Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Повторите пароль</p></td>
+                    <td>
+                        <input type="text" name="PasswordS" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Отправить" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+

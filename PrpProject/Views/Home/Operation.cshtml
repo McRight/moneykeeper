@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Operation";
+    Layout = "~/Views/Shared/_LayoutAuthorised.cshtml";
+}
+
+<div>
+    @foreach (var b in @ViewBag.Income)
+    {
+        <p>Вы хотите добавить свой @ViewBag.Operation в категорию @b.Name </p>
+    }
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td><p>Введите свой @ViewBag.Operation </p></td>
+                <td><input type="text" name="Income" /> </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Добавить" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
